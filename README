@@ -1,0 +1,52 @@
+ File:    README
+Author:  Brook Tilahun
+Program: Assignment 4 csis 252
+Date:    10/8/2021
+
+BUILDING THE PROGRAM
+   This program was written in C++ and distributed to be built on a 
+   Linux system using the g++ compiler.  To build the program, type 'make' 
+   to create the executable called 'prog4'
+
+RUNNING THE PROGRAM
+   Type 'prog4' at the command prompt after building the program.
+
+PROGRAM DESCRIPTION
+   This program will read ints from the keyboard for amount of horsepower and call on different methods.
+The program uses a conversion factor of 1 hp = 745.7 W as specified by a student in the #claiming channel to create a unit class.
+PROGRAM INPUT
+   All input comes from the keyboard.  Input of amount is asked at the start.
+
+PROGRAM OUTPUT
+   All output is written to the screen for unit conversion.
+
+PROGRAM DESIGN
+      The general algorithm
+      read the input from user
+      call on different methods to return a value
+      Use overload operators to perform comparisons
+
+
+FILE INDEX
+   file             function(s)        description
+   --------------   -----------------  ----------------------
+   
+   main.cpp         main               calls all other function
+   
+   unit.cpp         read               read from the keyboard, calls methods on input
+
+   unit.h                              Function header files
+
+   makefile                            builds executable
+
+   README                              this file
+
+
+PROGRAM TESTING
+   This program was tested with different sets of data.  
+   
+   Checked for input of 1 and 0 value
+
+   There are no known bugs. 
+               
+
