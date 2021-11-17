@@ -1,62 +1,43 @@
-// File:     main.cpp
-// Author:   Brook Tilahun
-// Date: 10/07/2021
-
-// Description
-// This program will test the Unit class
-
 #include <iostream>
 #include <iomanip>
-#include "unit.h"
+#include <cmath>
+
 using namespace std;
-  
-int main()
-{
-    cout << "This program Tests the Horsepower class."<<endl; //tells the user what this program does
-    Unit u1 = 1245;    // Constructor test using a double
-    Unit u2= Unit (u1);  //Copy constructor
-    Unit u3;           //Default constructor
-    Unit u4= 525;
-    Unit u5; 
-   
-    cout << "Default constructor" << endl;
-    cout << "u3: " << u3.getUnit() << endl;
-    
-    cout << "Constructor that takes a double" << endl;
-    cout << "u4: " << u4.getUnit() << endl;
-    
-    cout << "Copy constructor" << endl;
-    cout << "u2: " << u2.getUnit() << endl;
-    
-    cout << "Overloaded assignment operator" << endl;
-    u1 = u4; //overloaded assignment operator test
-    cout << "u1: " << u1.getUnit() << endl;
 
-    cout << "Getting and setting the value" << endl;
-            u5.setUnit(420);
-    cout << "u5: " << u5.getUnit() << endl;
-    
-    cout << " Input and output for unit" << endl;
-    cout << "Unit amount and name?" << endl;
-    cin >> u5;
-    cout << u5<<endl;
-    
-    cout << "Return all the potential names of the unit" << endl;
-    cout << u5.getSingular() << endl;
-    cout << u5.getAbb() << endl;
-    cout << u5.getPlural() << endl;
+int main() {
+    bool Altuve_to_m = true; //initializes the bool as true
+    int Altuve;              //declares Altuve as an int type
+    int m;                   //declares m as an int type
+    int input_number=1;      //declares and intializes input_number as an int type
+	while (input_number ==1) { //initilaizes a while loop that runs the program again when input is 1 
+ 	  cout << "Choose from the following:"<<endl 
+        	<< "(1) Altuve to m" <<endl
+        	<< "(2) m to Altuve" <<endl
+       	 	<< "Type the corresponding number to the task you want to perform" <<endl;
+	cin >> input_number;       //takes input from user and stores it in input_number
+	if (input_number == 1) {   // checks to see which way the conversion is going
+    		Altuve_to_m = true;
+	} else {
+    		Altuve_to_m = false;
+	};
+	if (Altuve_to_m) {          //starts the conversion for the first condition
+    		cout << "Please enter in the number of Altuve:" <<endl;
+    		cin >> Altuve;
+    		m = Altuve/1.65;    //performs the conversion
+    		cout<< Altuve << " Altuve is " << m << " meters." <<endl; //displays the converted value
+	} else {                    //starts the conversion for the second condition
+    		cout << "Please enter in the number of meters:" <<endl;
+    		cin >> m;
+    		Altuve= m*1.65;     //performs the conversion
+    		cout<< m << " meter is " << Altuve << " Altuve." <<endl; //displays the converted value
+	};
+	cout << "Choose from the following:" <<endl //asks the user to continue with more conversions or end
+        << "(1) to convert again" <<endl
+        << "(2) to exit" <<endl
+        << "type in the corresponding number, 1 or 2, to choose that option" <<endl;
+	cin >> input_number; //if user enters 1 program restarts conversion or else quits
+	};
+	return 0;
+};
 
-   cout << "Comparison of class" << endl;
-    if (u1 == u4) 
-        cout << "u1 and u2 are equivalent" << endl;
-    else
-        cout << "They are not equivalent" << endl; 
-    if (u1 > u4) 
-        cout << "u1 is greater than u2" << endl;
-    if (u1 < u4)
-        cout << "u1 is less than u4" << endl;
-    if (u1 != u4)
-        cout << "u1 and u4 are not equivalent" << endl;
- 
-   return 0;
-} 
+
